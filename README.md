@@ -43,11 +43,15 @@ As the we will be doing binary classification (Win or Lose) we decided to use th
 ### Models used:
   * Random Forest
 
+A random forest is a machine learning algorithm that uses an ensemble of decision trees to make predictions. It is trained using bagging, which involves randomly sampling the training data with replacement to create new datasets for each decision tree. The algorithm predicts the outcome by taking the average or mean of the output from the individual trees. Random forests reduce overfitting and increase precision compared to decision trees.
+
 |   Dataset :   |  Classification Accuracy | 
 |---------------|--------------------------|
 |     Train     |        0.7261375         |
 |     Test      |        0.72475           |
   * Logistic Regression
+
+Logistic regression is a machine learning algorithm that allows us to explore the relationship between two variables by using mathematical equations. It helps to predict the value of one variable based on the other, with a limited number of possible outcomes, such as "yes" or "no". This makes this algorithm suitable in this case where a `win` or `loss` is predicted.
 
 |   Dataset :   |  Classification Accuracy | 
 |---------------|--------------------------|
@@ -55,14 +59,18 @@ As the we will be doing binary classification (Win or Lose) we decided to use th
 |     Test      |        0.70825           |
   * K-nearest Neighbour
 
+K-nearest neighbor (KNN) is a machine learning algorithm that compares the new observation with all the existing observations in the dataset to find the k-nearest neighbors. The value of k is a user-defined parameter that determines the number of nearest neighbors to be considered. Once the nearest neighbors are identified, the KNN algorithm classifies the new observation based on the majority class of the k-nearest neighbors.
+
 |   Dataset :   |  Classification Accuracy | 
 |---------------|--------------------------|
 |     Train     |        0.7136625         |
 |     Test      |        0.71005           |
 
+### Comparing models
+
 As shown, there a correlation which would make sense as when equipment value difference is positive (Your team has better equipment than your enemies) you tend to beat them in firepower and win the round. Random Forest Classifier has the highest accuracy compared to the other 2 models.
 
-## Conclusion
+## Final remarks
 
 Overall, CS:GO is a complex game with many crucial variables affecting the outcome of a match that cannot be quantified, including player technical skill, team coordination, and game mechanics. While machine learning models can help to identify patterns and trends in this data, they may struggle to account for all other factors that can affect the outcome of a match.
 
