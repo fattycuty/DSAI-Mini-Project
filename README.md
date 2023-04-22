@@ -22,11 +22,17 @@ EDA can be a powerful tool for gaining insights into the CSGO data and using tho
 By using the tool ipywidgets, we are able to make data visualisation user interactive and filtered to specific categories ( `Map` , `Weapon` , `Side` ) for better exploration of the CS:GO data. Interactive plots and charts allow users to filter the data by map, and/or weapon, and/or side, and explore the relationship between different variables in real-time.
   * Most used weapon
   
-  ![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/img1.png)
-  ![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/img2.png)
+  ![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/img4.png)
   * Likely side to win as time progresses
+
+![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/img5.png)
   * Better bomb site to plant the bomb
+
+![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/img3.png)
   * Heat map of kills
+
+![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/img1.png)
+  ![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/img2.png)
 
 ## 3) Model Building & Machine Learning
 
