@@ -26,10 +26,15 @@ By using the tool ipywidgets, we are able to make data visualisation user intera
 ## 3) Model Building & Machine Learning
 
 We noticed from our experience that there are multiple significant factors that can affect the outcome of a round, such as whether `bomb is planted` or `equipment value`. With these data we can build machine learning models that predicts the outcome of rounds, and with these valuable insights, make better decisions in our future games.
+
+As the we will be doing binary classification (Win or Lose) we decided to use the following as machine learning models
+
 ### Models used:
   * Random Forest
   * Logistic Regression
   * K-nearest Neighbour
+
+As shown, there a correlation which would make sense as when equipment value difference is positive (Your team has better equipment than your enemies) you tend to beat them in firepower and win the round. Random Forest Classifier has the highest accuracy compared to the other 2 models.
 
 ## Conclusion
 
