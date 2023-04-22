@@ -42,8 +42,23 @@ As the we will be doing binary classification (Win or Lose) we decided to use th
 
 ### Models used:
   * Random Forest
+
+|   Dataset :   |  Classification Accuracy | 
+|---------------|--------------------------|
+|     Train     |        0.7261375         |
+|     Test      |        0.72475           |
   * Logistic Regression
+
+|   Dataset :   |  Classification Accuracy | 
+|---------------|--------------------------|
+|     Train     |        0.7065125         |
+|     Test      |        0.70825           |
   * K-nearest Neighbour
+
+|   Dataset :   |  Classification Accuracy | 
+|---------------|--------------------------|
+|     Train     |        0.7136625         |
+|     Test      |        0.71005           |
 
 As shown, there a correlation which would make sense as when equipment value difference is positive (Your team has better equipment than your enemies) you tend to beat them in firepower and win the round. Random Forest Classifier has the highest accuracy compared to the other 2 models.
 
