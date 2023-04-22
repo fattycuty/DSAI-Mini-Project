@@ -4,6 +4,8 @@
 
 "Counter-Strike: Global Offensive (CS:GO) is a popular first-person shooter game that has gained immense popularity worldwide. The game involves two teams, terrorists and counter-terrorists, competing against each other in a series of rounds to achieve **VICTORY**. As the game has evolved over time, so has the interest in analyzing and understanding the gameplay mechanics.
 
+![image](https://github.com/fattycuty/DSAI-Mini-Project/tree/main/sc1015_image/csgothumbnail.jpeg "Source: https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/")
+
 As players who wish to attain the highest rank in CS:GO (GLobal Elite), we want to use this as a way to develop better strategies and win more efficiently.
 
 ## Motivation
