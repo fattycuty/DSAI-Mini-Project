@@ -36,7 +36,7 @@ By using the tool ipywidgets, we are able to make data visualisation user intera
 
 ## 3) Model Building & Machine Learning
 
-We noticed from our experience that there are multiple significant factors that can affect the outcome of a round, such as whether `bomb is planted` or `equipment value`. With these data we can build machine learning models that predicts the outcome of rounds, and with these valuable insights, make better decisions in our future games.
+We noticed from our experience that there are multiple significant factors that can affect the outcome of a round, such as whether `bomb is planted` or `equipment value`. With these data we can build machine learning models that predicts the outcome of rounds, and with these valuable insights, make better decisions in our future games, such as whether to save or spend our money each round on better equipment.
 
 As the we will be doing binary classification (Win or Lose) we decided to use the following as machine learning models
 
