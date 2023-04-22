@@ -4,7 +4,7 @@
 
 "Counter-Strike: Global Offensive (CS:GO) is a popular first-person shooter game that has gained immense popularity worldwide. The game involves two teams, terrorists and counter-terrorists, competing against each other in a series of rounds to achieve **VICTORY**. As the game has evolved over time, so has the interest in analyzing and understanding the gameplay mechanics.
 
-![image](https://github.com/fattycuty/DSAI-Mini-Project/tree/main/sc1015_image/csgothumbnail.png)
+![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/csgothumbnail.png "Source: https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/")
 
 As players who wish to attain the highest rank in CS:GO (GLobal Elite), we want to use this as a way to develop better strategies and win more efficiently.
 
@@ -21,6 +21,9 @@ As the dataset files are huge, please download them and place it in /dataset/xxx
 EDA can be a powerful tool for gaining insights into the CSGO data and using those insights to improve gameplay, balance the game mechanics, and optimize strategies.
 By using the tool ipywidgets, we are able to make data visualisation user interactive and filtered to specific categories ( `Map` , `Weapon` , `Side` ) for better exploration of the CS:GO data. Interactive plots and charts allow users to filter the data by map, and/or weapon, and/or side, and explore the relationship between different variables in real-time.
   * Most used weapon
+  
+  ![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/img1.png)
+  ![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/img2.png)
   * Likely side to win as time progresses
   * Better bomb site to plant the bomb
   * Heat map of kills
