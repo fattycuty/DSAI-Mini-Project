@@ -11,6 +11,8 @@ As players who wish to attain the highest rank in CS:GO (Global Elite), we want 
 
 ---
 
+<br>
+
 ## Motivation
 
 Our goal is to use data visualisation techniques and machine learning algorithms to analyze the gameplay patterns of different teams and players. By identifying the key factors that contribute to a team's success or failure, we hope to gain useful insights for players like us to develop better strategies so we can win more games!
@@ -35,12 +37,15 @@ Place the files in these locations:
 
 ---
 
+
 ## 1) Data Cleaning
 We intially use 3 datasets, esea_meta_demos.part1, esea_master_dmg_demos.part1 and esea_master_kills_demos.part1. Each shows per round results, every damage taken encounter and all kills respectively. We also used the map_data to get the x,y coordinates of each map so that we can map it later on.
 
 We add some columns to the dataset such as round_duration for a better time indicator, loser_side, t_win and ct_win for easier data manipulation going forward. We also remove all matches that does not have a complete set of rounds. Lastly, we merged the columns to make one big dataframe called cleaned_df that contains all the previous 3 datasets. From there, we decompose it to show only per round results, called round_end_stats_df, which now contains more information per round than the initial esea_meta_demos.part1 dataset.
 
 ---
+
+<br>
 
 ## 2) Exploratory Data Analysis
 EDA can be a powerful tool for gaining insights into the CSGO data and using those insights to improve gameplay, balance the game mechanics, and optimize strategies.
@@ -54,17 +59,27 @@ interact(plotheat, Map = maps, Team = sides, Weapon = weapons)
 ```
 
 <br />
+<br>
 
 
   * Most used weapon
   
   ![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/img4.png)
+  
+  <br>
+  
   * Likely side to win as time progresses
 
 ![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/img5.png)
+
+<br>
+
   * Better bomb site to plant the bomb
 
 ![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/img3.png)
+
+<br>
+
   * Heat map of kills
 
 ![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/img1.png)
@@ -78,10 +93,14 @@ We noticed from our experience that there are multiple significant factors that 
 
 As the we will be doing binary classification (Win or Lose) we decided to use the following as machine learning models
 
+<br>
+
 ### Models used:
   * Random Forest
   * Logistic Regression
   * K-nearest Neighbor
+
+<br>
 
 ### Random Forest:
 
@@ -116,6 +135,8 @@ plt.show()
 |     Train     |        0.7261375         |
 |     Test      |        0.72475           |
 
+<br>
+
 ### Logistic Regression:
 
 Logistic regression is a machine learning algorithm that allows us to explore the relationship between two variables by using mathematical equations. It helps to predict the value of one variable based on the other, with a limited number of possible outcomes, such as "yes" or "no". This makes this algorithm suitable in this case where a `win` or `loss` is predicted.
@@ -124,6 +145,8 @@ Logistic regression is a machine learning algorithm that allows us to explore th
 |---------------|--------------------------|
 |     Train     |        0.7065125         |
 |     Test      |        0.70825           |
+
+<br>
 
 ### K-nearest neighbor:
 
@@ -160,6 +183,8 @@ plt.ylabel("Accuracy Score")
 |     Train     |        0.7136625         |
 |     Test      |        0.71005           |
 
+<br>
+
 ---
 
 ### Comparing models
@@ -168,17 +193,26 @@ As shown, there a correlation which would make sense as when equipment value dif
 
 ---
 
+<br>
+
 ## Final remarks
+
+<br>
 
 #### Reccomendation:
   * Avoid dense areas on heatmap (Smoke off/Alternate Route)
   * Better to contest for bomb defusal is your team is much more equipped
 
+<br>
+
  Overall, CS:GO is a complex game with many crucial variables affecting the outcome of a match that cannot be quantified, including player technical skill, team coordination, and game mechanics. While machine learning models can help to identify patterns and trends in this data, they may struggle to account for all other factors that can affect the outcome of a match.
 
 While data science and machine learning can provide valuable insights into developing strategies in CS:GO, they should be used in conjunction with other methods of analysis and individual skills development in order to achieve our objective.
 
+<br>
+
 ---
+
 
 ## Contributors
 [Hazim](https://github.com/fattycuty) -  Data Scraping, Data Preparation, Exploratory Data Analysis, Feature Engineering<br>
