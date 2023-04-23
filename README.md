@@ -1,4 +1,5 @@
 # SC1015-Mini-Project
+---
 
 ## Introduction
 
@@ -7,6 +8,8 @@
 ![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/csgothumbnail.png "Source: https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/")
 
 As players who wish to attain the highest rank in CS:GO (Global Elite), we want to use this as a way to develop better strategies and win more efficiently.
+
+---
 
 ## Motivation
 
@@ -30,10 +33,14 @@ Place the files in these locations:
 
 ![image](https://i.imgur.com/10FeZaK.png)
 
+---
+
 ## 1) Data Cleaning
 We intially use 3 datasets, esea_meta_demos.part1, esea_master_dmg_demos.part1 and esea_master_kills_demos.part1. Each shows per round results, every damage taken encounter and all kills respectively. We also used the map_data to get the x,y coordinates of each map so that we can map it later on.
 
 We add some columns to the dataset such as round_duration for a better time indicator, loser_side, t_win and ct_win for easier data manipulation going forward. We also remove all matches that does not have a complete set of rounds. Lastly, we merged the columns to make one big dataframe called cleaned_df that contains all the previous 3 datasets. From there, we decompose it to show only per round results, called round_end_stats_df, which now contains more information per round than the initial esea_meta_demos.part1 dataset.
+
+---
 
 ## 2) Exploratory Data Analysis
 EDA can be a powerful tool for gaining insights into the CSGO data and using those insights to improve gameplay, balance the game mechanics, and optimize strategies.
@@ -62,6 +69,8 @@ interact(plotheat, Map = maps, Team = sides, Weapon = weapons)
 
 ![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/img1.png)
   ![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/img2.png)
+  
+---
 
 ## 3) Model Building & Machine Learning
 
@@ -71,22 +80,43 @@ As the we will be doing binary classification (Win or Lose) we decided to use th
 
 ### Models used:
   * Random Forest
+  * Logistic Regression
+  * K-nearest Neighbor
+
+### Random Forest:
 
 A random forest is a machine learning algorithm that uses an ensemble of decision trees to make predictions. It is trained using bagging, which involves randomly sampling the training data with replacement to create new datasets for each decision tree. The algorithm predicts the outcome by taking the average or mean of the output from the individual trees. Random forests reduce overfitting and increase precision compared to decision trees.
 
 Cross-validation is used to determine an optimal `n_esimators` value
 
 ```
-from ipywidgets import interact, interactive, fixed, interact_manual
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import cross_val_score
 
-interact(plotheat, Map = maps, Team = sides, Weapon = weapons)
+n_estimators_range = [1, 5, 10, 15, 20, 25, 30, 50]
+cv_scores = []
+for n in n_estimators_range:
+    rfc = RandomForestClassifier(n_estimators=n, max_depth=4)
+    scores = cross_val_score(rfc, X_train, y_train.values.ravel(), cv=10) # evaluate the model with 5-fold cross-validation
+    cv_scores.append(np.mean(scores))
+
+import matplotlib.pyplot as plt
+plt.plot(n_estimators_range, cv_scores)
+plt.xlabel('n_estimators')
+plt.ylabel('Accuracy')
+plt.show()
 ```
+
+<br />
+
+![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/img6.png)
 
 |   Dataset :   |  Classification Accuracy | 
 |---------------|--------------------------|
 |     Train     |        0.7261375         |
 |     Test      |        0.72475           |
-  * Logistic Regression
+
+### Logistic Regression:
 
 Logistic regression is a machine learning algorithm that allows us to explore the relationship between two variables by using mathematical equations. It helps to predict the value of one variable based on the other, with a limited number of possible outcomes, such as "yes" or "no". This makes this algorithm suitable in this case where a `win` or `loss` is predicted.
 
@@ -94,7 +124,8 @@ Logistic regression is a machine learning algorithm that allows us to explore th
 |---------------|--------------------------|
 |     Train     |        0.7065125         |
 |     Test      |        0.70825           |
-  * K-nearest Neighbour
+
+### K-nearest neighbor:
 
 K-nearest neighbor (KNN) is a machine learning algorithm that compares the new observation with all the existing observations in the dataset to find the k-nearest neighbors. The value of k is a user-defined parameter that determines the number of nearest neighbors to be considered. Once the nearest neighbors are identified, the KNN algorithm classifies the new observation based on the majority class of the k-nearest neighbors.
 
@@ -122,20 +153,28 @@ plt.ylabel("Accuracy Score")
 
 <br />
 
+![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/img7.png)
+
 |   Dataset :   |  Classification Accuracy | 
 |---------------|--------------------------|
 |     Train     |        0.7136625         |
 |     Test      |        0.71005           |
 
+---
+
 ### Comparing models
 
 As shown, there a correlation which would make sense as when equipment value difference is positive (Your team has better equipment than your enemies) you tend to beat them in firepower and win the round. Random Forest Classifier has the highest accuracy compared to the other 2 models.
 
+---
+
 ## Final remarks
 
-Overall, CS:GO is a complex game with many crucial variables affecting the outcome of a match that cannot be quantified, including player technical skill, team coordination, and game mechanics. While machine learning models can help to identify patterns and trends in this data, they may struggle to account for all other factors that can affect the outcome of a match.
+ Overall, CS:GO is a complex game with many crucial variables affecting the outcome of a match that cannot be quantified, including player technical skill, team coordination, and game mechanics. While machine learning models can help to identify patterns and trends in this data, they may struggle to account for all other factors that can affect the outcome of a match.
 
 While data science and machine learning can provide valuable insights into developing strategies in CS:GO, they should be used in conjunction with other methods of analysis and individual skills development in order to achieve our objective.
+
+---
 
 ## Contributors
 [Hazim](https://github.com/fattycuty) -  Data Scraping, Data Preparation, Exploratory Data Analysis, Feature Engineering<br>
