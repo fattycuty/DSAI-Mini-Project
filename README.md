@@ -13,9 +13,27 @@ As players who wish to attain the highest rank in CS:GO (GLobal Elite), we want 
 Our goal is to use data visualisation techniques and machine learning algorithms to analyze the gameplay patterns of different teams and players. By identifying the key factors that contribute to a team's success or failure, we hope to gain useful insights for players like us to develop better strategies so we can win more games!
 
 Dataset is from: https://www.kaggle.com/datasets/skihikingkevin/csgo-matchmaking-damage
-As the dataset files are huge, please download them and place it in /dataset/xxx.csv and /maps/xxx.png
 
-## 1) Data cleaning
+As the dataset files are huge, please download them to run the notebook.
+
+Place the files in these locations:
+
+1. Project Folder
+
+![image](https://i.imgur.com/QLsTmrn.png)
+
+2. dataset folder
+
+![image](https://i.imgur.com/37OcU4Y.png)
+
+3. maps folder
+
+![image](https://i.imgur.com/10FeZaK.png)
+
+## 1) Data Cleaning
+We intially use 3 datasets, esea_meta_demos.part1, esea_master_dmg_demos.part1 and esea_master_kills_demos.part1. Each shows per round results, every damage taken encounter and all kills respectively. We also used the map_data to get the x,y coordinates of each map so that we can map it later on.
+
+We add some columns to the dataset such as round_duration for a better time indicator, loser_side, t_win and ct_win for easier data manipulation going forward. We also remove all matches that does not have a complete set of rounds. Lastly, we merged the columns to make one big dataframe called cleaned_df that contains all the previous 3 datasets. From there, we decompose it to show only per round results, called round_end_stats_df, which now contains more information per round than the initial esea_meta_demos.part1 dataset.
 
 ## 2) Exploratory Data Analysis
 EDA can be a powerful tool for gaining insights into the CSGO data and using those insights to improve gameplay, balance the game mechanics, and optimize strategies.
