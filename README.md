@@ -6,7 +6,7 @@
 
 ![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/csgothumbnail.png "Source: https://store.steampowered.com/app/730/CounterStrike_Global_Offensive/")
 
-As players who wish to attain the highest rank in CS:GO (GLobal Elite), we want to use this as a way to develop better strategies and win more efficiently.
+As players who wish to attain the highest rank in CS:GO (Global Elite), we want to use this as a way to develop better strategies and win more efficiently.
 
 ## Motivation
 
@@ -95,5 +95,5 @@ Overall, CS:GO is a complex game with many crucial variables affecting the outco
 While data science and machine learning can provide valuable insights into developing strategies in CS:GO, they should be used in conjunction with other methods of analysis and individual skills development in order to achieve our objective.
 
 ## Contributors
-[Jian Feng](https://github.com/Marcushjf)
-[Hazim](https://github.com/fattycuty)
+[Hazim](https://github.com/fattycuty) -  Data Scraping, Data Preparation, Exploratory Data Analysis, Feature Engineering<br>
+[Jian Feng](https://github.com/Marcushjf) - Machine Learning, Core Analysis, Data-Driven Insights<br>
