@@ -37,7 +37,18 @@ We add some columns to the dataset such as round_duration for a better time indi
 
 ## 2) Exploratory Data Analysis
 EDA can be a powerful tool for gaining insights into the CSGO data and using those insights to improve gameplay, balance the game mechanics, and optimize strategies.
+
 By using the tool ipywidgets, we are able to make data visualisation user interactive and filtered to specific categories ( `Map` , `Weapon` , `Side` ) for better exploration of the CS:GO data. Interactive plots and charts allow users to filter the data by map, and/or weapon, and/or side, and explore the relationship between different variables in real-time.
+
+```
+from ipywidgets import interact, interactive, fixed, interact_manual
+
+interact(plotheat, Map = maps, Team = sides, Weapon = weapons)
+```
+
+<br />
+
+
   * Most used weapon
   
   ![image](https://github.com/fattycuty/DSAI-Mini-Project/blob/main/sc1015_image/img4.png)
@@ -63,6 +74,14 @@ As the we will be doing binary classification (Win or Lose) we decided to use th
 
 A random forest is a machine learning algorithm that uses an ensemble of decision trees to make predictions. It is trained using bagging, which involves randomly sampling the training data with replacement to create new datasets for each decision tree. The algorithm predicts the outcome by taking the average or mean of the output from the individual trees. Random forests reduce overfitting and increase precision compared to decision trees.
 
+Cross-validation is used to determine an optimal `n_esimators` value
+
+```
+from ipywidgets import interact, interactive, fixed, interact_manual
+
+interact(plotheat, Map = maps, Team = sides, Weapon = weapons)
+```
+
 |   Dataset :   |  Classification Accuracy | 
 |---------------|--------------------------|
 |     Train     |        0.7261375         |
@@ -78,6 +97,30 @@ Logistic regression is a machine learning algorithm that allows us to explore th
   * K-nearest Neighbour
 
 K-nearest neighbor (KNN) is a machine learning algorithm that compares the new observation with all the existing observations in the dataset to find the k-nearest neighbors. The value of k is a user-defined parameter that determines the number of nearest neighbors to be considered. Once the nearest neighbors are identified, the KNN algorithm classifies the new observation based on the majority class of the k-nearest neighbors.
+
+Cross-validation is used to determine an optimal `n_neighbors` value
+
+```
+from sklearn.model_selection import cross_val_score
+from sklearn.preprocessing import StandardScaler
+
+k_values = [i for i in range (1,101)]
+scores = []
+
+scaler = StandardScaler()
+eq_diff_ct = scaler.fit_transform(eq_diff_ct)
+
+for k in k_values:
+    knn = KNeighborsClassifier(n_neighbors=k)
+    score = cross_val_score(knn, eq_diff_ct, side_win_ct.values.ravel(), cv=5)
+    scores.append(np.mean(score))
+    
+sb.lineplot(x = k_values, y = scores, marker = 'o')
+plt.xlabel("K Values")
+plt.ylabel("Accuracy Score")
+```
+
+<br />
 
 |   Dataset :   |  Classification Accuracy | 
 |---------------|--------------------------|
