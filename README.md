@@ -93,3 +93,7 @@ As shown, there a correlation which would make sense as when equipment value dif
 Overall, CS:GO is a complex game with many crucial variables affecting the outcome of a match that cannot be quantified, including player technical skill, team coordination, and game mechanics. While machine learning models can help to identify patterns and trends in this data, they may struggle to account for all other factors that can affect the outcome of a match.
 
 While data science and machine learning can provide valuable insights into developing strategies in CS:GO, they should be used in conjunction with other methods of analysis and individual skills development in order to achieve our objective.
+
+## Contributors
+[Jian Feng](https://github.com/Marcushjf)
+[Hazim](https://github.com/fattycuty)
